@@ -136,5 +136,16 @@ namespace Iridium.DB
                 RelatedClass = relatedClass;
             }
         }
+        
+        [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+        public sealed class DefaultValueAttribute : Attribute
+        {
+            public string Value { get; }
+
+            public NameAttribute(string value)
+            {
+                Value = value;
+            }
+        }
     }
 }
